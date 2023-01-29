@@ -1,0 +1,38 @@
+@use './../../vars';
+
+
+.header {
+  &-title {
+    @extend %mainTitle;
+  }
+
+  &-btn {
+    background-color: vars.$seethru-dark;
+    border: none;
+    color: vars.$regular-font-color;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1.2em;
+    padding: 1%;
+    text-align: center;
+  }
+
+  &-ul > a {
+    color: vars.$regular-font-color;
+    text-decoration: none;
+    &:hover {
+      color: vars.$regular-light;
+    }
+  }
+
+  &-li {
+    display: none;
+    transition: display 1s ease-in;
+    &-active {
+      background-color: vars.$regular-dark;
+    }
+    &-open {
+      display: block;
+      @extend %menuItem;
+    }
+  }
+}
