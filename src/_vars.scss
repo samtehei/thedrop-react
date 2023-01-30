@@ -1,0 +1,65 @@
+@use 'sass:color';
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Merienda:wght@300;400&family=Urbanist:wght@100;400;700&display=swap');
+
+$regular-font-color: #e0e0e0;
+$regular-dark: #000;
+$seethru-dark: #000000cc;
+$regular-light: #FFF;
+$seethru-light: #ffffff88;
+
+%backgroundImageSettings {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+%mainTitle {
+  @extend %seethruBlocks;
+  font-family: 'Aboreto', cursive;
+  font-size: 4em;
+  margin: 1% 20%;
+  padding: 2% 0;
+  @media screen and (max-width: 900px) {
+    font-size: 3em;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 2em;
+  }
+  @media screen and (max-width: 300px) {
+    font-size: 1.5em;
+  }
+}
+
+%menuItem {
+  background-color: $seethru-dark;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.2em;
+  padding: 1%;
+  text-align: center;
+  transition: 2s;
+  &:hover {
+    background-color: $regular-dark;
+    text-decoration: underline;
+  }
+}
+
+%seethruBlocks {
+  background-color: $regular-dark;
+  border: 2px solid $regular-light;
+  text-align: center;
+  text-decoration: none;
+  transition: 2s;
+  &:hover {
+    background-color: $seethru-dark;
+    border: 2px solid $regular-dark;
+  }
+  & > a {
+    color: $regular-font-color;
+    text-decoration: none;
+    &:visited {
+      color: $regular-font-color;
+    }
+  }
+}

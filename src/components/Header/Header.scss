@@ -1,0 +1,60 @@
+@use './../../vars';
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    display: none;
+    opacity: 100%;
+  }
+}
+
+.header {
+  &-title {
+    @extend %mainTitle;
+  }
+
+  &-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &-label {
+      background-color: vars.$seethru-dark;
+      border: 1px solid vars.$regular-dark;
+      display: flex;
+      justify-content: center;
+      font-family: 'Urbanist', sans-serif;
+      font-size: 1.2em;
+      margin: 0 45%;
+      padding: 1px;
+      text-align: center;
+      transition: 2s;
+      &:hover {
+       background-color: vars.$regular-dark; 
+       margin: 0;
+      }
+    }
+  }
+
+  &-ul > a {
+    color: vars.$regular-font-color;
+    text-decoration: none;
+    &:hover {
+      color: vars.$regular-light;
+    }
+  }
+
+  &-li {
+    display: none;
+    &-active {
+      background-color: vars.$regular-dark;
+    }
+    &-open {
+      animation-duration: 1s;
+      animation-name: fadein;
+      @extend %menuItem;
+    }
+  }
+}
