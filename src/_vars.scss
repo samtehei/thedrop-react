@@ -58,6 +58,15 @@ $seethru-light: #ffffff88;
       color: $regular-font-color;
     }
   }
+  @media screen and (max-width: 900px) {
+    margin: 1% 15%;
+  }
+  @media screen and (max-width: 600px) {
+    margin: 1% 10%;
+  }
+  @media screen and (max-width: 300px) {
+    margin: 1% 5%;
+  }
 }
 
 // ************** //
@@ -150,6 +159,13 @@ $seethru-light: #ffffff88;
 %pageTables {
   border-collapse: collapse;
   width: 100%;
+}
+
+%pageTablesDoubleCells {
+  font-size: smaller;
+  font-weight: 200;
+  padding: 0 0 1em 2em;
+  text-align: left;
 }
 
 %pageTablesLeftCells {
