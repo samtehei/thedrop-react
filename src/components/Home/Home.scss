@@ -1,4 +1,21 @@
 @use './../../vars';
 
 .home {
+  @extend %seethruBlocks;
+
+  &-emphasis {
+    @extend %emphasisTitle;
+  }
+
+  &-paragraph {
+    @extend %pageSectionsParagaphs;
+  }
+
+  &-section {
+    @extend %pageSections;
+  }
+
+  &-title {
+    @extend %pageTitles;
+  }
 }

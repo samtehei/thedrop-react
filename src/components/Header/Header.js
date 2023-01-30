@@ -1,9 +1,8 @@
-import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './Header.scss';
 
-function Header() {
-  const [openMenu, setOpenMenu] = useState(false);
+function Header({ openMenu, setOpenMenu }) {
 
   return (
     <div className="header">
@@ -122,6 +121,11 @@ function Header() {
       </nav>
     </div> 
   )
+}
+
+Header.propTypes = {
+  openMenu: PropTypes.bool.isRequired,
+  setOpenMenu: PropTypes.func.isRequired
 }
 
 export default Header
