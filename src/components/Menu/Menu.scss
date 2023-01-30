@@ -1,0 +1,39 @@
+@use './../../vars';
+
+.menu {
+  @extend %seethruBlocks;
+
+  &-emphasis {
+    @extend %pageEmphasisTitle;
+  }
+
+  &-paragraph {
+    @extend %pageSectionsParagaphs;
+    font-weight: 200;
+    text-align: center;
+  }
+
+  &-section {
+    @extend %pageSections;
+    &-title {
+      @extend %pageSectionsTitles;
+    }
+  }
+
+  &-table {
+    @extend %pageTables;
+    &-left-cell {
+      @extend %pageTablesLeftCells;
+    }
+    &-right-cell {
+      @extend %pageTablesRightCells;
+    }
+    &-double-cell {
+      @extend %pageTablesDoubleCells;
+    }
+  }
+
+  &-title {
+    @extend %pageTitles;
+  }
+}

@@ -10,6 +10,7 @@ import './App.scss';
 import { Route, Routes } from "react-router-dom";
 import { useState } from 'react';
 import Hours from '../Hours/Hours';
+import Menu from '../Menu/Menu';
 
 function App() {
   
@@ -28,7 +29,7 @@ function App() {
         <Route path="*" element={<Error />} />
 
         <Route path="/hours" element={<Hours />} />
-        
+        <Route path="/menu" element={<Menu />} />
       </Routes>
     </div>
   );

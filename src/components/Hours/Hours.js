@@ -49,9 +49,6 @@ function Hours() {
             </tr>
           </tbody>
         </table>
-        <p className="hours-paragraph">
-          Last kitchen orders at 9:30 p.m.
-        </p>
       </section>
       <section className="hours-section">
         <p className="hours-paragraph">
