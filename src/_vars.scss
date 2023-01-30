@@ -49,6 +49,23 @@ $seethru-light: #ffffff88;
   }
 }
 
+%pageLinks {
+  color: $emphasis-font-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+%pageLists {
+  padding: 0 1em;
+  list-style-type: circle;
+}
+
+%pageListsItem {
+  margin: 0.5em 1em;
+}
+
 %pageSections {
   font-family: 'Urbanist', sans-serif;
   font-size: 1.2em;

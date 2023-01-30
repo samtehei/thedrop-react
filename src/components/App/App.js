@@ -17,7 +17,7 @@ function App() {
   const [inFrench, setInFrench] = useState(false);
 
   return (
-    <div className="App">
+    <div className="app">
       <Header
         setOpenMenu={setOpenMenu}
         openMenu={openMenu}

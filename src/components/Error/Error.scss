@@ -1,0 +1,29 @@
+@use './../../vars';
+
+.error {
+  @extend %seethruBlocks;
+
+  &-link {
+    @extend %pageLinks;
+  }
+
+  &-list {
+    @extend %pageLists;
+
+    &-item {
+      @extend %pageListsItem;
+    }
+  }
+
+  &-paragraph {
+    @extend %pageSectionsParagaphs;
+  }
+
+  &-section {
+    @extend %pageSections;
+  }
+
+  &-title {
+    @extend %pageTitles;
+  }
+}
