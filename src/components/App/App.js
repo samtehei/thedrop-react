@@ -9,6 +9,7 @@ import './App.scss';
 //*** MISC ***//
 import { Route, Routes } from "react-router-dom";
 import { useState } from 'react';
+import Hours from '../Hours/Hours';
 
 function App() {
   
@@ -25,6 +26,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Error />} />
+
+        <Route path="/hours" element={<Hours />} />
+        
       </Routes>
     </div>
   );
