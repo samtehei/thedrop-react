@@ -3,8 +3,10 @@ import './Error.scss';
 
 function Error() {
   return (
-    <div className="error">
-      <h1 className="error-title">Sorry.</h1>
+    <main className="error">
+      <h2 className="error-title">
+        Sorry.
+      </h2>
       <section className="error-section">
         <p className="error-paragraph">
           We couldn't find the page you were looking for. This is either because:
@@ -19,7 +21,7 @@ function Error() {
           You can return to our homepage by clicking <Link className="error-link" to="/">here</Link>.
         </p>
       </section>
-    </div>
+    </main>
   )
 }
 

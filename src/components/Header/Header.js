@@ -71,6 +71,9 @@ function Header({ openMenu, setOpenMenu }) {
                 className={({ isActive }) =>
                   isActive ? "header-li-active" : null
                 }
+                onClick={() => {
+                  setOpenMenu(!openMenu);
+                }}
               >
               <li className={openMenu ? "header-li-open" : "header-li"}>
                 Home
@@ -78,20 +81,26 @@ function Header({ openMenu, setOpenMenu }) {
               </NavLink>
             
             <NavLink
-              to="/opening-hours"
+              to="/hours"
               className={({ isActive }) =>
                 isActive ? "header-li-active" : null
               }
+              onClick={() => {
+                setOpenMenu(!openMenu);
+              }}
             >
               <li className={openMenu ? "header-li-open" : "header-li"}>
-                Opening Hours
-                </li>
+                Hours
+              </li>
             </NavLink>
             <NavLink
               to="/menu"
               className={({ isActive }) =>
                 isActive ? "header-li-active" : null
               }
+              onClick={() => {
+                setOpenMenu(!openMenu);
+              }}
             >
               <li className={openMenu ? "header-li-open" : "header-li"}>
                 Menu
@@ -102,6 +111,9 @@ function Header({ openMenu, setOpenMenu }) {
               className={({ isActive }) =>
                 isActive ? "header-li-active" : null
               }
+              onClick={() => {
+                setOpenMenu(!openMenu);
+              }}
             >
               <li className={openMenu ? "header-li-open" : "header-li"}>
                 Reservations
@@ -112,6 +124,9 @@ function Header({ openMenu, setOpenMenu }) {
               className={({ isActive }) =>
                 isActive ? "header-li-active" : null
               }
+              onClick={() => {
+                setOpenMenu(!openMenu);
+              }}
             >
               <li className={openMenu ? "header-li-open" : "header-li"}>
                 Contact

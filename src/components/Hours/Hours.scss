@@ -1,0 +1,36 @@
+@use './../../vars';
+
+.hours {
+  @extend %seethruBlocks;
+
+  &-emphasis {
+    @extend %pageEmphasisTitle;
+  }
+
+  &-paragraph {
+    @extend %pageSectionsParagaphs;
+    font-weight: 200;
+    text-align: center;
+  }
+
+  &-section {
+    @extend %pageSections;
+    &-title {
+      @extend %pageSectionsTitles;
+    }
+  }
+
+  &-table {
+    @extend %pageTables;
+    &-left-cell {
+      @extend %pageTablesLeftCells;
+    }
+    &-right-cell {
+      @extend %pageTablesRightCells;
+    }
+  }
+
+  &-title {
+    @extend %pageTitles;
+  }
+}

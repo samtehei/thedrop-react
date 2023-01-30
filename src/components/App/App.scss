@@ -1,8 +1,5 @@
 @use './../../vars';
 
 .app {
-  background-image: url('../../assets/images/bar-background.jpg');
   @extend %backgroundImageSettings;
-  color: vars.$regular-font-color;
-  overflow-y: scroll;
 }

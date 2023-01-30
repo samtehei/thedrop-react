@@ -1,16 +1,5 @@
 @use './../../vars';
 
-@keyframes fadein {
-  from {
-    opacity: 0%;
-  }
-
-  to {
-    display: none;
-    opacity: 100%;
-  }
-}
-
 .header {
   &-title {
     @extend %mainTitle;
@@ -52,8 +41,6 @@
       background-color: vars.$regular-dark;
     }
     &-open {
-      animation-duration: 1s;
-      animation-name: fadein;
       @extend %menuItem;
     }
   }

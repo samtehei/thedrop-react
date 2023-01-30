@@ -1,25 +1,68 @@
 @use 'sass:color';
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Merienda:wght@300;400&family=Urbanist:wght@100;400;700&display=swap');
 
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    display: none;
+    opacity: 100%;
+  }
+}
+
+// ************** //
+// *** COLORS *** //
+// ************** //
+
 $regular-font-color: #e0e0e0;
 $emphasis-font-color: #daa520;
 $regular-dark: #000;
-$seethru-dark: #000000cc;
 $regular-light: #FFF;
+$seethru-dark: #000000cc;
 $seethru-light: #ffffff88;
 
+
+// *************** //
+// * BACKGROUNDS * //
+// *************** //
+
 %backgroundImageSettings {
+  background-image: url('./assets/images/bar-background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: $regular-font-color;
   height: 100vh;
   width: 100vw;
+  overflow-y: scroll;
 }
 
-%emphasisTitle {
-  color: $emphasis-font-color;
-  font-family: 'Aboreto', cursive;
+%seethruBlocks {
+  background-color: $regular-dark;
+  border: 2px solid $regular-light;
+  margin: 1% 20%;
+  padding: 2% 0;
+  text-align: center;
+  text-decoration: none;
+  transition: 2s;
+  &:hover {
+    background-color: $seethru-dark;
+    border: 2px solid $regular-dark;
+  }
+  & > a {
+    color: $regular-font-color;
+    text-decoration: none;
+    &:visited {
+      color: $regular-font-color;
+    }
+  }
 }
+
+// ************** //
+// *** HEADER *** //
+// ************** //
 
 %mainTitle {
   @extend %seethruBlocks;
@@ -37,6 +80,8 @@ $seethru-light: #ffffff88;
 }
 
 %menuItem {
+  animation-duration: 1s;
+  animation-name: fadein;
   background-color: $seethru-dark;
   font-family: 'Urbanist', sans-serif;
   font-size: 1.2em;
@@ -47,6 +92,15 @@ $seethru-light: #ffffff88;
     background-color: $regular-dark;
     text-decoration: underline;
   }
+}
+
+// *************** //
+// **** PAGES **** //
+// *************** //
+
+%pageEmphasisTitle {
+  color: $emphasis-font-color;
+  font-family: 'Aboreto', cursive;
 }
 
 %pageLinks {
@@ -85,6 +139,29 @@ $seethru-light: #ffffff88;
   text-align: justify;
 }
 
+%pageSectionsTitles {
+  font-size: 1.5em;
+  padding: .5em 0;
+  @media screen and (max-width: 900px) {
+    font-size: 1.2em;
+  }
+}
+
+%pageTables {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+%pageTablesLeftCells {
+  padding: .5em 1em .5em 0;
+  text-align: right;
+}
+
+%pageTablesRightCells {
+  padding: .5em 0 .5em 1em;
+  text-align: left;
+}
+
 %pageTitles {
   font-family: 'Merienda', cursive;
   font-size: 2em;
@@ -97,26 +174,5 @@ $seethru-light: #ffffff88;
   }
   @media screen and (max-width: 300px) {
     font-size: 1em;
-  }
-}
-
-%seethruBlocks {
-  background-color: $regular-dark;
-  border: 2px solid $regular-light;
-  margin: 1% 20%;
-  padding: 2% 0;
-  text-align: center;
-  text-decoration: none;
-  transition: 2s;
-  &:hover {
-    background-color: $seethru-dark;
-    border: 2px solid $regular-dark;
-  }
-  & > a {
-    color: $regular-font-color;
-    text-decoration: none;
-    &:visited {
-      color: $regular-font-color;
-    }
   }
 }
