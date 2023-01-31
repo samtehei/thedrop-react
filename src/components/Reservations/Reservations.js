@@ -1,6 +1,16 @@
+import { useEffect, useState } from 'react';
 import './Reservations.scss';
 
 function Reservations() {
+
+  // Success modal for submitted form
+  const [openModal, setOpenModal] = useState(false);
+  useEffect(() => {
+    document.body.addEventListener('click', () => {
+      setOpenModal(false);
+    });
+  });
+
   return (
     <main className="reservations">
       <h2 className="reservations-title">
@@ -15,12 +25,15 @@ function Reservations() {
         </p>
       </section>
       <section className="reservations-section">
+
+        {/* RESERVATION FORM */}
         <form
           action=""
           className="reservations-form"
           onSubmit={(e) => {
             e.preventDefault();
-            console.log(e)
+            e.target.reset();
+            setOpenModal(!openModal);
           }}
         >
             <label className="reservations-form-labels" htmlFor="date">
@@ -104,18 +117,42 @@ function Reservations() {
             <label className="reservations-form-labels" htmlFor="comment">
               Comment:
             </label>
-            <input
+            <textarea
               className="reservations-form-input reservations-form-comment"
               type="text"
               id="comment"
               name="comment"
-              placeholder="Comment"
-              required
+              placeholder="Comment..."
             />
             <button className="reservations-form-button" type="submit">
               Book now
             </button>
         </form>
+
+        {/* SUCCESS MODAL FOR SUBMITTED FORM */}
+        <div className={openModal ? "reservations-modal" : "reservations-modal-hidden"}>
+          <div
+            className="reservations-modal-content"
+            onClick={(e) => {e.stopPropagation();}}
+          >
+            <div className="reservations-modal-header">
+              <button 
+                type="button"
+                className="reservations-modal-close"
+                onClick={() => {
+                  setOpenModal(!openModal);
+                }}
+              >
+                &times;
+              </button>
+              <h3 className="reservations-title">Your reservation was successfully submitted.</h3>
+            </div>
+            <div className="reservations-modal-body">
+              <p className="reservations-modal-paragraph">Thank you.</p>
+              <p className="reservations-modal-paragraph">You will get notified two hours in advance.</p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   )

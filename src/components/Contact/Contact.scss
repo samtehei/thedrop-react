@@ -1,11 +1,7 @@
 @use './../../vars';
 
-.reservations {
+.contact {
   @extend %seethruBlocks;
-
-  &-emphasis {
-    @extend %pageEmphasisTitle;
-  }
 
   &-form {
     @extend %pageForms;
@@ -43,6 +39,18 @@
       &::after {
         color: vars.$regular-light;
       }
+    }
+  }
+
+  &-link {
+    @extend %pageLinks;
+  }
+
+  &-list {
+    @extend %pageLists;
+
+    &-item {
+      @extend %pageListsItem;
     }
   }
 

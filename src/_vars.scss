@@ -23,7 +23,6 @@ $regular-light: #FFF;
 $seethru-dark: #000000cc;
 $seethru-light: #ffffff88;
 
-
 // *************** //
 // * BACKGROUNDS * //
 // *************** //
@@ -91,6 +90,8 @@ $seethru-light: #ffffff88;
 %menuItem {
   animation-duration: 1s;
   animation-name: fadein;
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: 1s;
   background-color: $seethru-dark;
   font-family: 'Urbanist', sans-serif;
   font-size: 1.2em;
@@ -107,10 +108,64 @@ $seethru-light: #ffffff88;
 // **** PAGES **** //
 // *************** //
 
+%pageTitles {
+  font-family: 'Merienda', cursive;
+  font-size: 2em;
+  padding: 1em 0;
+  @media screen and (max-width: 900px) {
+    font-size: 1.5em;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 1.2em;
+  }
+  @media screen and (max-width: 300px) {
+    font-size: 1em;
+  }
+}
+
 %pageEmphasisTitle {
   color: $emphasis-font-color;
   font-family: 'Aboreto', cursive;
 }
+
+%pageLinks {
+  color: $emphasis-font-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+%pageSections {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.2em;
+  padding: .5em;
+  @media screen and (max-width: 900px) {
+    font-size: 1em;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 0.8em;
+  }
+
+}
+
+%pageSectionsTitles {
+  font-size: 1.5em;
+  padding: .5em 0;
+  @media screen and (max-width: 900px) {
+    font-size: 1.2em;
+  }
+}
+
+%pageSectionsParagaphs {
+  line-height: 1.2;
+  padding: .3em 1em;
+  text-align: justify;
+}
+
+// *************** //
+// **** FORMS **** //
+// *************** //
 
 %pageForms {
   background-color: $regular-dark;
@@ -163,18 +218,25 @@ $seethru-light: #ffffff88;
     margin: 2.5% 0;
     padding: 2.5%;
   }
+  @media screen and (max-width: 750px) {
+    min-width: 15em;
+  }
   @media screen and (max-width: 600px) {
     min-width: 12em;
   }
   @media screen and (max-width: 400px) {
-    min-width: none;
-    max-width: 3em;
+    min-width: 0;
+    max-width: 10em;
   }
   @media screen and (max-width: 350px) {
-    min-width: none;
-    max-width: 1em;
+    min-width: 0;
+    max-width: 8em;
     margin: 5% 0;
     padding: 0;
+  }
+  @media screen and (max-width: 230px) {
+    min-width: 0;
+    max-width: 6em;
   }
 }
 
@@ -198,13 +260,9 @@ $seethru-light: #ffffff88;
   }
 }
 
-%pageLinks {
-  color: $emphasis-font-color;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-}
+// **************** //
+// **** LISTS **** //
+// **************** //
 
 %pageLists {
   padding: 0 1em;
@@ -215,32 +273,60 @@ $seethru-light: #ffffff88;
   margin: 0.5em 1em;
 }
 
-%pageSections {
-  font-family: 'Urbanist', sans-serif;
-  font-size: 1.2em;
-  padding: .5em;
-  @media screen and (max-width: 900px) {
-    font-size: 1em;
-  }
-  @media screen and (max-width: 600px) {
-    font-size: 0.8em;
-  }
+// **************** //
+// **** MODALS **** //
+// **************** //
 
+%pageModals {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 20%;
+  overflow: auto;
+  background-color: $seethru-dark;
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadein;
+  animation-duration: 0.4s
 }
 
-%pageSectionsParagaphs {
+%pageModalsClose {
+  background-color: transparent;
+  border: 1px solid $seethru-light;
+  color: $regular-font-color;
+  font-weight: bold;
+  margin: 1% 0;
+  padding: .1em .5em;
+  transition: color 1s;
+  &:hover {
+    border-color: $emphasis-font-color;
+    color: $emphasis-font-color;
+  }
+  &:active {
+    background-color: $seethru-light;
+  }
+}
+
+%pageModalsContent {
+  @extend %seethruBlocks;
+  &:hover {
+    background-color: $regular-dark;
+    border: 2px solid $emphasis-font-color;
+  }
+}
+
+%pageModalsParagraph {
   line-height: 1.2;
   padding: .3em 1em;
-  text-align: justify;
+  text-align: center;
 }
 
-%pageSectionsTitles {
-  font-size: 1.5em;
-  padding: .5em 0;
-  @media screen and (max-width: 900px) {
-    font-size: 1.2em;
-  }
-}
+// **************** //
+// **** TABLES **** //
+// **************** //
 
 %pageTables {
   border-collapse: collapse;
@@ -262,19 +348,4 @@ $seethru-light: #ffffff88;
 %pageTablesRightCells {
   padding: .5em 0 .5em 1em;
   text-align: left;
-}
-
-%pageTitles {
-  font-family: 'Merienda', cursive;
-  font-size: 2em;
-  padding: 1em 0;
-  @media screen and (max-width: 900px) {
-    font-size: 1.5em;
-  }
-  @media screen and (max-width: 600px) {
-    font-size: 1.2em;
-  }
-  @media screen and (max-width: 300px) {
-    font-size: 1em;
-  }
 }
