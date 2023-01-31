@@ -1,0 +1,88 @@
+@use './../../vars';
+
+.contact {
+  @extend %seethruBlocks;
+
+  &-form {
+    @extend %pageForms;
+
+    &-button {
+      @extend %pageFormsButtons;
+    }
+
+    &-comment {
+      @media screen and (max-width: 350px) {
+        padding: 5% 0;
+      }
+    }
+
+    &-date {
+      @extend %pageFormsInputsDate;
+    }
+
+    &-input {
+      @extend %pageFormsInputs;
+    }
+
+    &-labels {
+      @extend %pageFormsLabels;
+    }
+
+    &-time {
+      @extend %pageFormsInputs;
+      color: vars.$seethru-light;
+
+      &:focus {
+        color: vars.$regular-light;
+      }
+
+      &::after {
+        color: vars.$regular-light;
+      }
+    }
+  }
+
+  &-link {
+    @extend %pageLinks;
+  }
+
+  &-list {
+    @extend %pageLists;
+
+    &-item {
+      @extend %pageListsItem;
+    }
+  }
+
+  &-modal {
+    @extend %pageModals;
+
+    &-hidden {
+      display: none;
+    }
+
+    &-close {
+      @extend %pageModalsClose;
+    }
+
+    &-content {
+      @extend %pageModalsContent;
+    }
+
+    &-paragraph {
+      @extend %pageModalsParagraph;
+    }
+  }
+
+  &-paragraph {
+    @extend %pageSectionsParagaphs;
+  }
+
+  &-section {
+    @extend %pageSections;
+  }
+
+  &-title {
+    @extend %pageTitles;
+  }
+}

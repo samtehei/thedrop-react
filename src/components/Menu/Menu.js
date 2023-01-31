@@ -8,7 +8,7 @@ function Menu() {
         <table className="menu-table">
           <thead>
             <tr>
-              <th className="menu-section-title" colspan="2">
+              <th className="menu-section-title" colSpan="2">
                 <em className="menu-emphasis">Cocktails</em>
               </th>
             </tr>
@@ -129,7 +129,7 @@ function Menu() {
         <table className="menu-table">
           <thead>
             <tr>
-              <th className="menu-section-title" colspan="2">
+              <th className="menu-section-title" colSpan="2">
                 <em className="menu-emphasis">Beer</em>
               </th>
             </tr>

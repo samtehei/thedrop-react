@@ -8,7 +8,7 @@ function Hours() {
         <table className="hours-table">
           <thead>
             <tr>
-              <th className="hours-section-title" colspan="2">
+              <th className="hours-section-title" colSpan="2">
                 <em className="hours-emphasis">The Drop</em> - Bar
               </th>
             </tr>
@@ -33,7 +33,7 @@ function Hours() {
         <table className="hours-table">
           <thead>
             <tr>
-              <th className="hours-section-title" colspan="2">
+              <th className="hours-section-title" colSpan="2">
                 <em className="hours-emphasis">The Drop</em> - Kitchen
               </th>
             </tr>

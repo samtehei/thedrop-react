@@ -15,6 +15,8 @@ function Header({ openMenu, setOpenMenu }) {
         </Link>
       </h1>
       <nav className="header-nav">
+
+        {/* HEADER MENU ICON */}
         <input
           className="header-checkbox"
           onClick={() => {
@@ -30,6 +32,7 @@ function Header({ openMenu, setOpenMenu }) {
           {
             openMenu 
             ?
+            // CLOSE MENU ICON
             <svg
               width="24"
               height="24"
@@ -42,7 +45,8 @@ function Header({ openMenu, setOpenMenu }) {
                 fill="currentColor"
               />
             </svg> 
-            : 
+            :
+            // BURGER MENU ICON
             <svg
               width="24"
               height="24"
@@ -65,6 +69,8 @@ function Header({ openMenu, setOpenMenu }) {
             </svg>
             }
         </label>
+
+        {/* HEADER NAV LINKS */}
           <ul className="header-ul">
               <NavLink
                 to="/"
