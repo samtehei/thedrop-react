@@ -11,6 +11,7 @@ import { Route, Routes } from "react-router-dom";
 import { useState } from 'react';
 import Hours from '../Hours/Hours';
 import Menu from '../Menu/Menu';
+import Reservations from '../Reservations/Reservations';
 
 function App() {
   
@@ -30,6 +31,7 @@ function App() {
 
         <Route path="/hours" element={<Hours />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/reservations" element={<Reservations />} />
       </Routes>
     </div>
   );

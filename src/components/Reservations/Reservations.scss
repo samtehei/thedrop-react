@@ -1,0 +1,60 @@
+@use './../../vars';
+
+.reservations {
+  @extend %seethruBlocks;
+
+  &-emphasis {
+    @extend %pageEmphasisTitle;
+  }
+
+  &-form {
+    @extend %pageForms;
+
+    &-button {
+      @extend %pageFormsButtons;
+    }
+
+    &-comment {
+      @media screen and (max-width: 350px) {
+        padding: 5% 0;
+      }
+    }
+
+    &-date {
+      @extend %pageFormsInputsDate;
+    }
+
+    &-input {
+      @extend %pageFormsInputs;
+    }
+
+    &-labels {
+      @extend %pageFormsLabels;
+    }
+
+    &-time {
+      @extend %pageFormsInputs;
+      color: vars.$seethru-light;
+
+      &:focus {
+        color: vars.$regular-light;
+      }
+
+      &::after {
+        color: vars.$regular-light;
+      }
+    }
+  }
+
+  &-paragraph {
+    @extend %pageSectionsParagaphs;
+  }
+
+  &-section {
+    @extend %pageSections;
+  }
+
+  &-title {
+    @extend %pageTitles;
+  }
+}
