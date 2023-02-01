@@ -1,6 +1,29 @@
 @use './../../vars';
 
 .header {
+  &-accessibility {
+    @extend %accessibleElem;
+  }
+
+  &-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-language {
+      margin: 1%;
+      width: 2em;
+    }
+  
+    &-theme {
+      color: vars.$emphasis-font-color;
+      background-color: vars.$regular-dark;
+      border-radius: 100%;
+      margin: 1%;
+      padding: .1em;
+    }
+  }
+
   &-title {
     @extend %mainTitle;
   }

@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+
+// STYLESHEET
 import './Contact.scss';
 
-function Contact() {
+function Contact({ inFrench, lightMode }) {
 
-    // Success modal for submitted form
+  // Success modal for submitted form
   const [openModal, setOpenModal] = useState(false);
   useEffect(() => {
     document.body.addEventListener('click', () => {
@@ -15,9 +18,15 @@ function Contact() {
     <main className="contact">
       <h2 className="contact-title">Contact</h2>
       <section className="contact-section">
-        <p className="contact-paragraph">
-          Please submit the form below for generic inquiries, comments, or feedback.
-        </p>
+        
+          {
+            inFrench
+            ?
+            <p className="contact-paragraph">Merci d'utiliser le formulaire ci-dessous pour toutes questions et commentaires généraux.</p>
+            :
+            <p className="contact-paragraph">Please submit the form below for generic inquiries, comments, or feedback.</p>
+          }
+        
       </section>
       <section className="contact-section">
 
@@ -32,51 +41,51 @@ function Contact() {
           }}
         >
             <label className="contact-form-labels" htmlFor="name">
-              Full Name:
+              {inFrench ? "Nom complet :" : "Full Name:"}
             </label>
             <input
               className="contact-form-input contact-form-name"
               type="text"
               id="name"
               name="name"
-              placeholder="Full Name"
+              placeholder={inFrench ? "Nom complet" : "Full Name"}
               required
             />
             <label className="contact-form-labels" htmlFor="email">
-              Email:
+              {inFrench ? "E-mail :" : "Email:"}
             </label>
             <input
               className="contact-form-input contact-form-email"
               type="email"
               id="email"
               name="email"
-              placeholder="Email"
+              placeholder={inFrench ? "E-mail" : "Email"}
               required
             />
             <label className="contact-form-labels" htmlFor="phone">
-              Phone number:
+              {inFrench ? "Numéro de téléphone :" : "Phone number:"}
             </label>
             <input
               className="contact-form-input contact-form-phone"
               type="tel"
               id="phone"
               name="phone"
-              placeholder="Phone number"
+              placeholder={inFrench ? "Numéro de téléphone" : "Phone number"}
               required
             />
             <label className="contact-form-labels" htmlFor="comment">
-              Comment:
+              {inFrench ? "Commentaire :" : "Comment:"}
             </label>
             <textarea
               className="contact-form-input contact-form-comment"
               type="text"
               id="comment"
               name="comment"
-              placeholder="Comment..."
+              placeholder={inFrench ? "Commentaire..." : "Comment..."}
               required
             />
             <button className="contact-form-button" type="submit">
-              Submit
+              {inFrench ? "Envoyer" : "Submit"}
             </button>
         </form>
 
@@ -96,11 +105,30 @@ function Contact() {
               >
                 &times;
               </button>
-              <h3 className="contact-title">Your form was successfully submitted.</h3>
+              <h3 className="contact-title">
+                {
+                  inFrench
+                  ?
+                  "Votre message a bien été pris en compte."
+                  :
+                  "Your form was successfully submitted."
+                }
+              </h3>
             </div>
             <div className="contact-modal-body">
-              <p className="contact-modal-paragraph">Thank you.</p>
-              <p className="contact-modal-paragraph">This will help us better serve you and get you in touch with the correct person more quickly.</p>
+              {
+                inFrench
+                ?
+                <>
+                  <p className="contact-modal-paragraph">Merci.</p>
+                  <p className="contact-modal-paragraph">Votre message nous permettra d'améliorer notre service et de vous diriger plus rapidement vers le service adéquate.</p>
+                </>
+                :
+                <>
+                  <p className="contact-modal-paragraph">Thank you.</p>
+                  <p className="contact-modal-paragraph">This will help us better serve you and get you in touch with the correct person more quickly.</p>
+                </>
+              }
             </div>
           </div>
         </div>
@@ -108,5 +136,11 @@ function Contact() {
     </main>
   )
 }
+
+Contact.propTypes = {
+  inFrench: PropTypes.bool.isRequired,
+  lightMode: PropTypes.bool.isRequired
+}
+
 
 export default Contact

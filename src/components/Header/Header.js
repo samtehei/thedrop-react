@@ -1,13 +1,66 @@
 import { Link, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+// SVG ICONS
+import { ReactComponent as CloseSvg } from "../../assets/icons/close.svg";
+import { ReactComponent as FranceSvg } from "../../assets/icons/france.svg";
+import { ReactComponent as BurgerSvg } from "../../assets/icons/menu.svg";
+import { ReactComponent as MoonSvg } from "../../assets/icons/moon.svg";
+import { ReactComponent as SunSvg } from "../../assets/icons/sun.svg";
+import { ReactComponent as UkSvg } from "../../assets/icons/uk.svg";
+
+// STYLESHEET
 import './Header.scss';
 
-function Header({ openMenu, setOpenMenu }) {
+function Header(
+  {
+    inFrench,
+    setInFrench,
+    lightMode,
+    setLightMode,
+    openMenu,
+    setOpenMenu
+  }
+){
 
   return (
     <div className="header">
-      <div className="header-language">
-      En Français | Switch to English
+      <div className="header-bar">
+        <div
+          className="header-bar-language"
+          onClick={() => {
+            setInFrench(!inFrench);
+          }}
+        >
+        {
+          inFrench
+          ?
+          <>
+          <UkSvg />
+          <span className="header-accessibility">This website is in English. You can set it to French by clicking here.</span>
+          </>
+          
+          :
+          <>
+            <FranceSvg />
+            <span className="header-accessibility">Ce site est en français. Vous pouvez visiter sa version anglaise en cliquant ici.</span>
+          </>
+        }
+        </div>
+        <div
+          className="header-bar-theme"
+          onClick={() => {
+            setLightMode(!lightMode);
+          }}
+        >
+        {
+          lightMode
+          ?
+          <MoonSvg />
+          :
+          <SunSvg />
+        }
+        </div>
       </div>
       <h1 className="header-title">
         <Link to="/">
@@ -15,60 +68,35 @@ function Header({ openMenu, setOpenMenu }) {
         </Link>
       </h1>
       <nav className="header-nav">
-
         {/* HEADER MENU ICON */}
-        <input
-          className="header-checkbox"
-          onClick={() => {
-            setOpenMenu(!openMenu);
-          }}
-          id="menu"
-          type="checkbox"
-        />
-        <label
-          className="header-checkbox-label"
-          htmlFor="menu"
-        >
-          {
-            openMenu 
-            ?
-            // CLOSE MENU ICON
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z"
-                fill="currentColor"
-              />
-            </svg> 
-            :
-            // BURGER MENU ICON
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6Z"
-                fill="currentColor"
-              />
-              <path
-                d="M2 12.0322C2 11.4799 2.44772 11.0322 3 11.0322H21C21.5523 11.0322 22 11.4799 22 12.0322C22 12.5845 21.5523 13.0322 21 13.0322H3C2.44772 13.0322 2 12.5845 2 12.0322Z"
-                fill="currentColor"
-              />
-              <path
-                d="M3 17.0645C2.44772 17.0645 2 17.5122 2 18.0645C2 18.6167 2.44772 19.0645 3 19.0645H21C21.5523 19.0645 22 18.6167 22 18.0645C22 17.5122 21.5523 17.0645 21 17.0645H3Z"
-                fill="currentColor"
-              />
-            </svg>
-            }
-        </label>
+        <>
+          <input
+            className="header-checkbox"
+            id="menu"
+            type="checkbox"
+            onClick={() => { setOpenMenu(!openMenu) }}
+          />
+          <label
+            className="header-checkbox-label"
+            htmlFor="menu"
+          >
+            {
+              openMenu 
+              ?
+              // CLOSE MENU ICON
+              <>
+                <CloseSvg />
+                <span className="header-accessibility">Exit Menu</span>
+              </>
+              :
+              // BURGER MENU ICON
+              <>
+                <BurgerSvg />
+                <span className="header-accessibility">Menu</span>
+              </>
+              }
+          </label>
+        </>
 
         {/* HEADER NAV LINKS */}
           <ul className="header-ul">
@@ -82,12 +110,12 @@ function Header({ openMenu, setOpenMenu }) {
                 }}
               >
               <li className={openMenu ? "header-li-open" : "header-li"}>
-                Home
+              {inFrench ? "Accueil" : "Home"}
               </li>
               </NavLink>
             
             <NavLink
-              to="/hours"
+              to={inFrench ? "/horaires" : "/hours"}
               className={({ isActive }) =>
                 isActive ? "header-li-active" : null
               }
@@ -96,11 +124,11 @@ function Header({ openMenu, setOpenMenu }) {
               }}
             >
               <li className={openMenu ? "header-li-open" : "header-li"}>
-                Hours
+              {inFrench ? "Horaires" : "Hours"}
               </li>
             </NavLink>
             <NavLink
-              to="/menu"
+              to={inFrench ? "/la-carte" : "/menu"}
               className={({ isActive }) =>
                 isActive ? "header-li-active" : null
               }
@@ -109,11 +137,11 @@ function Header({ openMenu, setOpenMenu }) {
               }}
             >
               <li className={openMenu ? "header-li-open" : "header-li"}>
-                Menu
+              {inFrench ? "La Carte" : "Menu"}
               </li>
             </NavLink>
             <NavLink
-              to="/reservations"
+              to={inFrench ? "/reserver" : "/reservations"}
               className={({ isActive }) =>
                 isActive ? "header-li-active" : null
               }
@@ -122,11 +150,11 @@ function Header({ openMenu, setOpenMenu }) {
               }}
             >
               <li className={openMenu ? "header-li-open" : "header-li"}>
-                Reservations
+              {inFrench ? "Réservations" : "Reservations"}
               </li>
             </NavLink>
             <NavLink
-              to="/contact"
+              to={inFrench ? "/nous-contacter" : "/contact"}
               className={({ isActive }) =>
                 isActive ? "header-li-active" : null
               }
@@ -145,8 +173,12 @@ function Header({ openMenu, setOpenMenu }) {
 }
 
 Header.propTypes = {
+  inFrench: PropTypes.bool.isRequired,
+  setInFrench: PropTypes.func.isRequired,
+  lightMode: PropTypes.bool.isRequired,
+  setLightMode: PropTypes.func.isRequired,
   openMenu: PropTypes.bool.isRequired,
   setOpenMenu: PropTypes.func.isRequired
 }
 
-export default Header
+export default Header;
