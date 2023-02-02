@@ -7,6 +7,10 @@
     @extend %pageEmphasisTitle;
   }
 
+  &-light {
+    @extend %seethruBlocksLight;
+  }
+
   &-paragraph {
     @extend %pageSectionsParagaphs;
   }

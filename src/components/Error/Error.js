@@ -7,7 +7,7 @@ import './Error.scss';
 function Error({ inFrench, lightMode }) {
 
   return (
-    <main className="error">
+    <main className={lightMode ? "error-light" : "error"}>
       <h2 className="error-title">
         {inFrench ? "Toutes nos excuses." : "Sorry."}
       </h2>

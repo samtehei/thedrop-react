@@ -5,10 +5,10 @@ import './Menu.scss';
 
 function Menu({ inFrench, lightMode }) {
   return (
-    <main className="menu">
+    <main className={lightMode ? "menu-light" : "menu"}>
       <h2 className="menu-title">{inFrench ? "La Carte" : "Menu"}</h2>
       <section className="menu-section">
-        <table className="menu-table">
+        <table className={lightMode ? "menu-table menu-table-light" : "menu-table"}>
           <thead>
             <tr>
               <th className="menu-section-title" colSpan="2">
@@ -25,11 +25,11 @@ function Menu({ inFrench, lightMode }) {
               {
                 inFrench
                 ?
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Rhum brun, porto rubis, jus de citron, blanc d'œuf, seltzer
                 </td>
                 :
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Dark rum, ruby port, lemon juice, egg white, club soda
                 </td>
               }
@@ -42,11 +42,11 @@ function Menu({ inFrench, lightMode }) {
             {
                 inFrench
                 ?
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Rhum blanc, liqueur de marasquin, jus de citron vert, jus de pamplemousse
                 </td>
                 :
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   White rum, maraschino liqueur, lime juice, grapefruit juice
                 </td>
               }
@@ -59,11 +59,11 @@ function Menu({ inFrench, lightMode }) {
             {
                 inFrench
                 ?
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Brandy de pomme, Pimm's n°1, jus de citron, sirop simple, bière de gingembre, amers
                 </td>
                 :
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Apple brandy, Pimm's No. 1, lemon juice, simple syrup, ginger beer, bitters
                 </td>
               }
@@ -76,11 +76,11 @@ function Menu({ inFrench, lightMode }) {
             {
                 inFrench
                 ?
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Cognac, sirop simple, jus de citron, Champagne
                 </td>
                 :
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Cognac, simple syrup, lemon juice, Champagne
                 </td>
               }
@@ -93,11 +93,11 @@ function Menu({ inFrench, lightMode }) {
             {
                 inFrench
                 ?
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   St-Germain, brin de menthe, prosecco, eau gazeuse
                 </td>
                 :
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   St-Germain, mint sprig, prosecco, soda water
                 </td>
               }
@@ -110,11 +110,11 @@ function Menu({ inFrench, lightMode }) {
               {
                 inFrench
                 ?
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Gin, curaçao orange, jus de citron vert, amers
                 </td>
                 :
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Gin, orange curaçao, lime juice, bitters
                 </td>
               }
@@ -127,11 +127,11 @@ function Menu({ inFrench, lightMode }) {
               {
                 inFrench
                 ?
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Mezcal, Aperol, liqueur de marasquin, jus de citron vert
                 </td>
                 :
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Mezcal, Aperol, maraschino liqueur, lime juice
                 </td>
               }
@@ -144,11 +144,11 @@ function Menu({ inFrench, lightMode }) {
               {
                 inFrench
                 ?
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Mezcal infusé à l'ananas, Chartreuse verte, liqueur de marasquin Luxardo, jus de citron vert
                 </td>
                 :
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Pineapple-infused mezcal, green Chartreuse, Luxardo maraschino liqueur, lime juice
                 </td>
               }
@@ -161,11 +161,11 @@ function Menu({ inFrench, lightMode }) {
               {
                 inFrench
                 ?
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Vodka au citron, sirop simple, jus de citron, menthe, seltzer
                 </td>
                 :
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Lemon vodka, simple syrup, lemon juice, mint, club soda
                 </td>
               }
@@ -178,11 +178,11 @@ function Menu({ inFrench, lightMode }) {
               {
                 inFrench
                 ?
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Whisky, mezcal, bénédictine, amers
                 </td>
                 :
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Whiskey, mezcal, Benedictine, bitters
                 </td>
               }
@@ -195,11 +195,11 @@ function Menu({ inFrench, lightMode }) {
               {
                 inFrench
                 ?
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Whisky de seigle, Cointreau, vermouth doux, citron
                 </td>
                 :
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Rye whiskey, Cointreau, sweet vermouth, lemon
                 </td>
               }
@@ -212,11 +212,11 @@ function Menu({ inFrench, lightMode }) {
               {
                 inFrench
                 ?
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Bourbon, Cointreau, sirop de romarin, amers
                 </td>
                 :
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Bourbon, Cointreau, rosemary syrup, bitters
                 </td>
               }
@@ -225,7 +225,7 @@ function Menu({ inFrench, lightMode }) {
         </table>
       </section>
       <section className="menu-section">
-        <table className="menu-table">
+        <table className={lightMode ? "menu-table menu-table-light" : "menu-table"}>
           <thead>
             <tr>
               <th className="menu-section-title" colSpan="2">
@@ -248,11 +248,11 @@ function Menu({ inFrench, lightMode }) {
               {
                 inFrench
                 ?
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Lager ambrée allemande
                 </td>
                 :
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   German dark lager
                 </td>
               }  
@@ -265,11 +265,11 @@ function Menu({ inFrench, lightMode }) {
               {
                 inFrench
                 ?
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Lambic améliorée au jus de pêche
                 </td>
                 :
-                <td className="menu-table-double-cell" colSpan="2">
+                <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                   Lambic enriched with peach juice
                 </td>
               }              
@@ -279,7 +279,7 @@ function Menu({ inFrench, lightMode }) {
               <td className="menu-table-left-cell">8&euro;</td>
             </tr>
             <tr className="menu-table-row">
-              <td className="menu-table-double-cell" colSpan="2">
+              <td className={lightMode ? "menu-table-double-cell menu-table-double-cell-light" : "menu-table-double-cell"} colSpan="2">
                 Tsarish Double Imperial Stout
               </td>
             </tr>
@@ -288,9 +288,9 @@ function Menu({ inFrench, lightMode }) {
         {
           inFrench
           ?
-          <p className="menu-paragraph">Les bières pression sont souvent sujettes à changement.</p>
+          <p className={lightMode ? "menu-paragraph menu-paragraph-light" : "menu-paragraph"}>Les bières pression sont souvent sujettes à changement.</p>
           :
-          <p className="menu-paragraph">Draft beers are rotating and subject to change often.</p>
+          <p className={lightMode ? "menu-paragraph menu-paragraph-light" : "menu-paragraph"}>Draft beers are rotating and subject to change often.</p>
         }
       </section>
     </main>

@@ -6,7 +6,7 @@ import './Home.scss';
 
 function Home({ inFrench, lightMode }) {
   return (
-    <main className="home">
+    <main className={lightMode ? "home-light" : "home"}>
       <h2 className="home-title">
         {inFrench ? "Bienvenue." : "Welcome."}
       </h2>
@@ -15,7 +15,7 @@ function Home({ inFrench, lightMode }) {
         inFrench
         ?
         <>
-          <p className="home-paragraph">Situé au cœur de la vieille ville, <em className="home-emphasis">The Drop</em> apporte une touche de modernité aux "speakeasies" : c'est en s'inspirant de ces bars historiques que nous avons conçus un espace unique et contemporain. En offrant des services inégalés, nous nous efforçons d'élargir nos frontières au-delà de l'expérience traditionnelle.</p>
+          <p className="home-paragraph">Situé au cœur de la vieille ville, <em className="home-emphasis">The Drop</em> apporte une touche de modernité aux "speakeasies" : c'est en s'inspirant de ces bars historiques que nous avons conçu un espace unique et contemporain. En offrant des services inégalés, nous nous efforçons d'élargir nos frontières au-delà de l'expérience traditionnelle.</p>
           <p className="home-paragraph">Venez profiter de l'ambiance d'un speakeasy avec une salle dédiée aux concerts de jazz et une sélection gastronomique avant-garde.</p>
         </>
         :

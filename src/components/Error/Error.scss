@@ -3,6 +3,10 @@
 .error {
   @extend %seethruBlocks;
 
+  &-light {
+    @extend %seethruBlocksLight;
+  }
+
   &-link {
     @extend %pageLinks;
   }

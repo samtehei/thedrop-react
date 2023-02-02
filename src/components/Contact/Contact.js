@@ -15,7 +15,7 @@ function Contact({ inFrench, lightMode }) {
   });
 
   return (
-    <main className="contact">
+    <main className={lightMode ? "contact contact-light" : "contact"}>
       <h2 className="contact-title">Contact</h2>
       <section className="contact-section">
         
@@ -33,7 +33,7 @@ function Contact({ inFrench, lightMode }) {
       {/* CONTACT FORM */}
       <form
           action=""
-          className="reservations-form"
+          className={lightMode ? "reservations-form reservations-form-light" : "reservations-form"}
           onSubmit={(e) => {
             e.preventDefault();
             e.target.reset();
@@ -44,7 +44,7 @@ function Contact({ inFrench, lightMode }) {
               {inFrench ? "Nom complet :" : "Full Name:"}
             </label>
             <input
-              className="contact-form-input contact-form-name"
+              className={lightMode ? "contact-form-input contact-form-input-light contact-form-name" : "contact-form-input contact-form-name"}
               type="text"
               id="name"
               name="name"
@@ -55,7 +55,7 @@ function Contact({ inFrench, lightMode }) {
               {inFrench ? "E-mail :" : "Email:"}
             </label>
             <input
-              className="contact-form-input contact-form-email"
+              className={lightMode ? "contact-form-input contact-form-input-light contact-form-email" : "contact-form-input contact-form-email"}
               type="email"
               id="email"
               name="email"
@@ -66,7 +66,7 @@ function Contact({ inFrench, lightMode }) {
               {inFrench ? "Numéro de téléphone :" : "Phone number:"}
             </label>
             <input
-              className="contact-form-input contact-form-phone"
+              className={lightMode ? "contact-form-input contact-form-input-light contact-form-phone" : "contact-form-input contact-form-phone"}
               type="tel"
               id="phone"
               name="phone"
@@ -77,14 +77,14 @@ function Contact({ inFrench, lightMode }) {
               {inFrench ? "Commentaire :" : "Comment:"}
             </label>
             <textarea
-              className="contact-form-input contact-form-comment"
+              className={lightMode ? "contact-form-input contact-form-input-light contact-form-comment" : "contact-form-input contact-form-comment"}
               type="text"
               id="comment"
               name="comment"
               placeholder={inFrench ? "Commentaire..." : "Comment..."}
               required
             />
-            <button className="contact-form-button" type="submit">
+            <button className={lightMode ? "contact-form-button contact-form-button-light" : "contact-form-button"} type="submit">
               {inFrench ? "Envoyer" : "Submit"}
             </button>
         </form>
@@ -92,13 +92,13 @@ function Contact({ inFrench, lightMode }) {
         {/* SUCCESS MODAL FOR SUBMITTED FORM */}
         <div className={openModal ? "contact-modal" : "contact-modal-hidden"}>
           <div
-            className="reservations-modal-content"
+            className={lightMode ? "contact-modal-content contact-modal-content-light" : "contact-modal-content"}
             onClick={(e) => {e.stopPropagation();}}
           >
             <div className="contact-modal-header">
               <button 
                 type="button"
-                className="contact-modal-close"
+                className={lightMode ? "contact-modal-close contact-modal-close-light" : "contact-modal-close"}
                 onClick={() => {
                   setOpenModal(!openModal);
                 }}

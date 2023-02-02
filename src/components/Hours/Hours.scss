@@ -3,6 +3,10 @@
 .hours {
   @extend %seethruBlocks;
 
+  &-light {
+    @extend %seethruBlocksLight;
+  }
+
   &-emphasis {
     @extend %pageEmphasisTitle;
   }
@@ -11,10 +15,14 @@
     @extend %pageSectionsParagaphs;
     font-weight: 200;
     text-align: center;
+    &-light {
+      font-weight: 400;
+    }
   }
 
   &-section {
     @extend %pageSections;
+
     &-title {
       @extend %pageSectionsTitles;
     }
@@ -22,6 +30,10 @@
 
   &-table {
     @extend %pageTables;
+    &-light {
+      background-color: vars.$light-background;
+      border-color: vars.$emphasis-font-color;
+    }
     &-left-cell {
       @extend %pageTablesLeftCells;
     }

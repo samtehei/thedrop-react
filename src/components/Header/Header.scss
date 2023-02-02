@@ -21,11 +21,19 @@
       border-radius: 100%;
       margin: 1%;
       padding: .1em;
+      &-light {
+        background-color: vars.$light-background;
+      }
     }
   }
 
   &-title {
     @extend %mainTitle;
+  }
+
+  &-title-light {
+    @extend %mainTitleLight;
+    font-weight: 500;
   }
 
   &-checkbox {
@@ -47,6 +55,14 @@
        background-color: vars.$regular-dark; 
        margin: 0;
       }
+      &-light {
+        background-color: vars.$seethru-light;
+        border: 1px solid vars.$regular-dark;
+        color: vars.$regular-dark;
+        &:hover {
+          background-color: vars.$light-background;
+        }
+      }
     }
   }
 
@@ -58,6 +74,14 @@
     }
   }
 
+  &-ul-light > a {
+    color: vars.$seethru-dark;
+    text-decoration: none;
+    &:hover {
+      color: vars.$regular-dark;
+    }
+  } 
+
   &-li {
     display: none;
     &-active {
@@ -65,6 +89,18 @@
     }
     &-open {
       @extend %menuItem;
+    }
+    &-light {
+      &-active {
+        background-color: vars.$light-background;
+      }
+      &-open {
+        @extend %menuItem;
+        background-color: vars.$seethru-light;
+        &:hover {
+          background-color: vars.$light-background;
+        }
+      }
     }
   }
 }
