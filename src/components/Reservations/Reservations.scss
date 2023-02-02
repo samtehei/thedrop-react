@@ -3,15 +3,28 @@
 .reservations {
   @extend %seethruBlocks;
 
+  &-light {
+    @extend %seethruBlocksLight;
+  }
+
   &-emphasis {
     @extend %pageEmphasisTitle;
   }
 
   &-form {
     @extend %pageForms;
+    &-light {
+      background-color: vars.$light-background;
+      color: vars.$regular-dark;
+    }
 
     &-button {
       @extend %pageFormsButtons;
+      &-light {
+        border-color: vars.$regular-dark;
+        background-color: vars.$light-background;
+        color: vars.$regular-dark;
+      }
     }
 
     &-comment {
@@ -26,6 +39,11 @@
 
     &-input {
       @extend %pageFormsInputs;
+      &-light {
+        border-color: vars.$emphasis-font-color;
+        background-color: vars.$light-background;
+        color: vars.$regular-dark;
+      }
     }
 
     &-labels {
@@ -35,6 +53,20 @@
     &-time {
       @extend %pageFormsInputs;
       color: vars.$seethru-light;
+      &-light {
+        border-color: vars.$emphasis-font-color;
+        background-color: vars.$light-background;
+        color: vars.$regular-dark;
+        &:focus {
+          color: vars.$regular-dark;
+        }
+        &::before {
+          color: vars.$regular-dark;
+        }
+        &::after {
+          color: vars.$regular-dark;
+        }
+      }
 
       &:focus {
         color: vars.$regular-light;
@@ -55,10 +87,23 @@
 
     &-close {
       @extend %pageModalsClose;
+      &-light {
+        border-color: vars.$regular-dark;
+        color: vars.$regular-dark;
+        &:hover {
+          background-color: vars.$light-background;
+        }
+      }
     }
 
     &-content {
       @extend %pageModalsContent;
+      &-light {
+        background-color: vars.$light-background;
+        &:hover {
+          background-color: vars.$seethru-light;
+        }
+      }
     }
 
     &-paragraph {

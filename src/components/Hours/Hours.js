@@ -6,10 +6,10 @@ import './Hours.scss';
 function Hours({ inFrench, lightMode }) {
 
   return (
-    <main className="hours">
+    <main className={lightMode ? "hours-light" : "hours"}>
       <h2 className="hours-title">{inFrench ? "Horaires" : "Hours"}</h2>
       <section className="hours-section">
-        <table className="hours-table">
+        <table className={lightMode ? "hours-table hours-table-light" : "hours-table"}>
           <thead>
             <tr>
               <th className="hours-section-title" colSpan="2">
@@ -34,7 +34,7 @@ function Hours({ inFrench, lightMode }) {
         </table>
       </section>
       <section className="hours-section">
-        <table className="hours-table">
+        <table className={lightMode ? "hours-table hours-table-light" : "hours-table"}>
           <thead>
             <tr>
               <th className="hours-section-title" colSpan="2">
@@ -55,7 +55,7 @@ function Hours({ inFrench, lightMode }) {
         </table>
       </section>
       <section className="hours-section">
-        <p className="hours-paragraph">
+        <p className={lightMode ? "hours-paragraph hours-paragraph-light" : "hours-paragraph"}>
           <em className="hours-emphasis">The Drop</em> {inFrench ? "est fermé le 25 Décembre et le 1er Janvier." : "closes for Christmas and New Year's Day."}
         </p>
       </section>

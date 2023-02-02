@@ -48,7 +48,7 @@ function Header(
         }
         </div>
         <div
-          className="header-bar-theme"
+          className={lightMode ? "header-bar-theme header-bar-theme-light" : "header-bar-theme"}
           onClick={() => {
             setLightMode(!lightMode);
           }}
@@ -62,7 +62,7 @@ function Header(
         }
         </div>
       </div>
-      <h1 className="header-title">
+      <h1 className={lightMode ? "header-title-light" : "header-title"}>
         <Link to="/">
           The Drop
         </Link>
@@ -77,7 +77,7 @@ function Header(
             onClick={() => { setOpenMenu(!openMenu) }}
           />
           <label
-            className="header-checkbox-label"
+            className={lightMode ? "header-checkbox-label header-checkbox-label-light" : "header-checkbox-label"}
             htmlFor="menu"
           >
             {
@@ -99,7 +99,7 @@ function Header(
         </>
 
         {/* HEADER NAV LINKS */}
-          <ul className="header-ul">
+          <ul className={lightMode ? "header-ul-light" : "header-ul"}>
               <NavLink
                 to="/"
                 className={({ isActive }) =>
@@ -109,7 +109,7 @@ function Header(
                   setOpenMenu(!openMenu);
                 }}
               >
-              <li className={openMenu ? "header-li-open" : "header-li"}>
+              <li className={openMenu ? lightMode ? "header-li-light-open" : "header-li-open" : "header-li"}>
               {inFrench ? "Accueil" : "Home"}
               </li>
               </NavLink>
@@ -123,7 +123,7 @@ function Header(
                 setOpenMenu(!openMenu);
               }}
             >
-              <li className={openMenu ? "header-li-open" : "header-li"}>
+              <li className={openMenu ? lightMode ? "header-li-light-open" : "header-li-open" : "header-li"}>
               {inFrench ? "Horaires" : "Hours"}
               </li>
             </NavLink>
@@ -136,7 +136,7 @@ function Header(
                 setOpenMenu(!openMenu);
               }}
             >
-              <li className={openMenu ? "header-li-open" : "header-li"}>
+              <li className={openMenu ? lightMode ? "header-li-light-open" : "header-li-open" : "header-li"}>
               {inFrench ? "La Carte" : "Menu"}
               </li>
             </NavLink>
@@ -149,7 +149,7 @@ function Header(
                 setOpenMenu(!openMenu);
               }}
             >
-              <li className={openMenu ? "header-li-open" : "header-li"}>
+              <li className={openMenu ? (lightMode ? "header-li-light-open" : "header-li-open") : "header-li"}>
               {inFrench ? "Réservations" : "Reservations"}
               </li>
             </NavLink>
@@ -162,7 +162,7 @@ function Header(
                 setOpenMenu(!openMenu);
               }}
             >
-              <li className={openMenu ? "header-li-open" : "header-li"}>
+              <li className={openMenu ? lightMode ? "header-li-light-open" : "header-li-open" : "header-li"}>
                 Contact
               </li>
             </NavLink>

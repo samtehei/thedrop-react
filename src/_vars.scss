@@ -21,7 +21,8 @@ $emphasis-font-color: #daa520;
 $regular-dark: #000;
 $regular-light: #FFF;
 $seethru-dark: #000000cc;
-$seethru-light: #ffffff88;
+$seethru-light: #EEE1C688;
+$light-background: #EEE1C6;
 
 // ****************** //
 // * SCREEN READERS * //
@@ -82,12 +83,58 @@ $seethru-light: #ffffff88;
   }
 }
 
+%seethruBlocksLight {
+  background-color: $light-background;
+  border: 2px solid $regular-dark;
+  color: $regular-dark;
+  margin: 1% 20%;
+  padding: 2% 0;
+  text-align: center;
+  text-decoration: none;
+  transition: 2s;
+  &:hover {
+    background-color: $seethru-light;
+    border: 2px solid $regular-light;
+  }
+  & > a {
+    color: $regular-dark;
+    text-decoration: none;
+    &:visited {
+      color: $regular-dark;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    margin: 1% 15%;
+  }
+  @media screen and (max-width: 600px) {
+    margin: 1% 10%;
+  }
+  @media screen and (max-width: 300px) {
+    margin: 1% 5%;
+  }
+}
+
 // ************** //
 // *** HEADER *** //
 // ************** //
 
 %mainTitle {
   @extend %seethruBlocks;
+  font-family: 'Aboreto', cursive;
+  font-size: 4em;
+  @media screen and (max-width: 900px) {
+    font-size: 3em;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 2em;
+  }
+  @media screen and (max-width: 300px) {
+    font-size: 1.5em;
+  }
+}
+
+%mainTitleLight {
+  @extend %seethruBlocksLight;
   font-family: 'Aboreto', cursive;
   font-size: 4em;
   @media screen and (max-width: 900px) {

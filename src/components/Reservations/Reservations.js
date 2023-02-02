@@ -15,7 +15,7 @@ function Reservations({ inFrench, lightMode }) {
   });
 
   return (
-    <main className="reservations">
+    <main className={lightMode ? "reservations reservations-light" : "reservations"}>
       <h2 className="reservations-title">
         {inFrench ? "Réservations" : "Reservations"}
       </h2>
@@ -47,7 +47,7 @@ function Reservations({ inFrench, lightMode }) {
         {/* RESERVATION FORM */}
         <form
           action=""
-          className="reservations-form"
+          className={lightMode ? "reservations-form reservations-form-light" : "reservations-form"}
           onSubmit={(e) => {
             e.preventDefault();
             e.target.reset();
@@ -58,7 +58,7 @@ function Reservations({ inFrench, lightMode }) {
               {inFrench ? "Jour :" : "Date:"}
             </label>
             <input
-              className="reservations-form-input reservations-form-date"
+              className={lightMode ? "reservations-form-input reservations-form-input-light reservations-form-date" : "reservations-form-input reservations-form-date"}
               type="date"
               id="date"
               name="date"
@@ -69,7 +69,7 @@ function Reservations({ inFrench, lightMode }) {
               {inFrench ? "Heure d'arrivée :" : "Time:"}
             </label>
             <select 
-              className="reservations-form-time"
+              className={lightMode ? "reservations-form-time reservations-form-time-light" : "reservations-form-time"}
               defaultValue={'DEFAULT'}
               required
             >
@@ -90,7 +90,7 @@ function Reservations({ inFrench, lightMode }) {
               {inFrench ? "Nombre de convives :" : "Number of guests:"}
             </label>
             <input
-              className="reservations-form-input reservations-form-guests"
+              className={lightMode ? "reservations-form-input reservations-form-input-light reservations-form-guests" : "reservations-form-input reservations-form-guests"}
               type="number"
               id="guests"
               name="guests"
@@ -103,7 +103,7 @@ function Reservations({ inFrench, lightMode }) {
               {inFrench ? "Nom :" : "Name:"}
             </label>
             <input
-              className="reservations-form-input reservations-form-name"
+              className={lightMode ? "reservations-form-input reservations-form-input-light reservations-form-name" : "reservations-form-input reservations-form-name"}
               type="text"
               id="name"
               name="name"
@@ -114,7 +114,7 @@ function Reservations({ inFrench, lightMode }) {
               {inFrench ? "E-mail :" : "Email:"}
             </label>
             <input
-              className="reservations-form-input reservations-form-email"
+              className={lightMode ? "reservations-form-input reservations-form-input-light reservations-form-email" : "reservations-form-input reservations-form-email"}
               type="email"
               id="email"
               name="email"
@@ -125,7 +125,7 @@ function Reservations({ inFrench, lightMode }) {
               {inFrench ? "Numéro de téléphone :" : "Phone number:"}
             </label>
             <input
-              className="reservations-form-input reservations-form-phone"
+              className={lightMode ? "reservations-form-input reservations-form-input-light reservations-form-phone" : "reservations-form-input reservations-form-phone"}
               type="tel"
               id="phone"
               name="phone"
@@ -136,13 +136,13 @@ function Reservations({ inFrench, lightMode }) {
               {inFrench ? "Commentaire :" : "Comment:"}
             </label>
             <textarea
-              className="reservations-form-input reservations-form-comment"
+              className={lightMode ? "reservations-form-input reservations-form-input-light reservations-form-comment" : "reservations-form-input reservations-form-comment"}
               type="text"
               id="comment"
               name="comment"
               placeholder={inFrench ? "Commentaire..." : "Comment..."}
             />
-            <button className="reservations-form-button" type="submit">
+            <button className={lightMode ? "reservations-form-button reservations-form-button-light" : "reservations-form-button"} type="submit">
               {inFrench ? "Réserver" : "Book now"}
             </button>
         </form>
@@ -150,13 +150,13 @@ function Reservations({ inFrench, lightMode }) {
         {/* SUCCESS MODAL FOR SUBMITTED FORM */}
         <div className={openModal ? "reservations-modal" : "reservations-modal-hidden"}>
           <div
-            className="reservations-modal-content"
+            className={lightMode ? "reservations-modal-content reservations-modal-content-light" : "reservations-modal-content"}
             onClick={(e) => {e.stopPropagation();}}
           >
             <div className="reservations-modal-header">
               <button 
                 type="button"
-                className="reservations-modal-close"
+                className={lightMode ? "reservations-modal-close reservations-modal-close-light" : "reservations-modal-close"}
                 onClick={() => {
                   setOpenModal(!openModal);
                 }}
